@@ -6,9 +6,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.App .card .text-center,.searchPart,.card-body{
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+.list-group-item:hover{
+  background: gainsboro;
+}
+.list-group-item img{
+  position: absolute;
+  opacity: 0.2;
+  left: 0;
+  top: 3%;
+  width: 45px;
+  height: 45px;
+}
+.list-group-item{
+  overflow: hidden;
 }
