@@ -1,4 +1,9 @@
-
+/*
+    Init state For Components:
+        todoDetails ---> id
+        todo ---> todos list, todos match list
+        addTodo ---> content
+ */
 const initState = {
     id : 3,
     todos: [
@@ -6,7 +11,7 @@ const initState = {
         {content: "Playing Computer Game",details: "I will Play Computer Gamges at 9:00pm",time: "9:00pm",id: 2}
         ],
     matchTodos:[],
-    keyword : ""
+    content : ""
 };
 const rootReducer = (state = initState,action) => {
     switch (action.type) {
@@ -36,20 +41,23 @@ const rootReducer = (state = initState,action) => {
             });
         case "MATCH_TODO":
             let keyword = action.keyword;
-            let rgx = new RegExp(keyword);
-            let matches = state.todos.filter(
-                todo => rgx.test(todo.content)
-            );
-            console.log(matches);
+            console.log(keyword);
+            let matches = [];
+            if(keyword !== "" && keyword !== undefined){
+                let rgx = new RegExp(keyword);
+                matches = state.todos.filter(
+                    todo => rgx.test(todo.content)
+                );
+            }
             return ({
                 ...state,
                 matchTodos : matches
             });
-        case "INPIT_UPDATE":
+        case "INPUT_UPDATE":
             keyword = action.value;
             return ({
                 ...state,
-                keyword : keyword
+                content: keyword
             });
         default:
             break;

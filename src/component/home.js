@@ -3,15 +3,8 @@ import Todo from './todo';
 import AddTodo from './addTodo';
 import Search from './searchTodo';
 import plant from '../imgs/g0.jpg';
-import {connect} from 'react-redux';
 
 class Home extends Component{
-    handleAddTodo = (todo) => {
-        console.log(`${todo.content} will be added`);
-        const {handleAddTodos} = this.props;
-        handleAddTodos(todo);
-
-    };
 
     render() {
         return (
@@ -22,7 +15,7 @@ class Home extends Component{
                     </div>
                     <div className="card-body">
                         <Todo/>
-                        <AddTodo addTodo={this.handleAddTodo}/>
+                        <AddTodo/>
                     </div>
                     <div className="card-footer text-muted">
                         Good Good Study, Day Day Up!
@@ -37,16 +30,4 @@ class Home extends Component{
     }
 }
 
-const mapStateToProps = (state) => {
-    return ({
-        id : state.id,
-        todos : state.todos,
-        matchTodos : state.matchTodos
-    });
-};
-const mapDispatchToProps = (dispatch) => {
-    return ({
-        handleAddTodos : (todo) => dispatch({type:"ADD_TODO",todo:todo}),
-    })
-};
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default Home;
