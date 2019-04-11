@@ -2,7 +2,6 @@
     Init state For Components:
         todoDetails ---> id
         todo ---> todos list, todos match list
-        addTodo ---> content
  */
 const initState = {
     id : 3,
@@ -10,8 +9,7 @@ const initState = {
         {content: "Watching Tv",details: "I will watch TV at 5:00pm",time: "5:00pm",id: 1},
         {content: "Playing Computer Game",details: "I will Play Computer Gamges at 9:00pm",time: "9:00pm",id: 2}
         ],
-    matchTodos:[],
-    content : ""
+    matchTodos:[]
 };
 const rootReducer = (state = initState,action) => {
     switch (action.type) {
@@ -53,11 +51,14 @@ const rootReducer = (state = initState,action) => {
                 ...state,
                 matchTodos : matches
             });
-        case "INPUT_UPDATE":
-            keyword = action.value;
+        case "DETAILS_UPDATE":
+            id = action.id;
+            todosNew = state.todos.find(
+                todo => id+"" === todo.id+""
+            );
             return ({
                 ...state,
-                content: keyword
+                todos : todosNew
             });
         default:
             break;

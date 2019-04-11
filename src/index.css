@@ -32,3 +32,36 @@ code {
 .list-group-item{
   overflow: hidden;
 }
+.detailTitle{
+  text-align: center;
+}
+.detailContent{
+  display: flex;
+  height: 600px;
+  justify-content: space-between;
+}
+.subContent{
+  width: 48%;
+}
+.subContent h4{
+  text-align: center;
+}
+.subContent .imgsInput{
+  display: flex;
+  justify-content: space-between;
+}
+.detailContent textarea{
+  width: 95%;
+  height: 30%;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 10px;
+}
+.detailContent button{
+  float: right;
+  margin: 20px;
+  margin-top: 5px;
+}
+#imgInput{
+  display: none;
+}

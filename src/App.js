@@ -9,6 +9,10 @@ import Home from "./component/home";
 import Contact from './component/contact';
 import TodoDetail from './component/todoDetails';
 
+/*
+    Container Component: Home, Contact, TodoDetail
+    UI (Function) Component: Navbar, AddTodo, SearchTodo, Todo
+ */
 class App extends Component {
     render() {
         return (

@@ -16,3 +16,9 @@
 <h2>Version: 1.0.1</h2>
 
 <h3>functions:</h3>
+<p>6.Search keyword,but display has some problem</p>
+
+<h2>Version: 1.0.2</h2>
+<p>6.Fix some bugs of search function, need change the html style</p>
+<p>7.Change Todo funtion component to container component(reduce the complex of redux)</p>
+<p>8.Add image input(prepare for server or database)</p>
