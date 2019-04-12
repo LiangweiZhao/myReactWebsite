@@ -9,7 +9,8 @@ const initState = {
         {content: "Watching Tv",details: "I will watch TV at 5:00pm",time: "5:00pm",id: 1},
         {content: "Playing Computer Game",details: "I will Play Computer Gamges at 9:00pm",time: "9:00pm",id: 2}
         ],
-    matchTodos:[]
+    matchTodos:[],
+    keyword: ""
 };
 const rootReducer = (state = initState,action) => {
     switch (action.type) {
@@ -39,7 +40,7 @@ const rootReducer = (state = initState,action) => {
             });
         case "MATCH_TODO":
             let keyword = action.keyword;
-            console.log(keyword);
+            //console.log(keyword);
             let matches = [];
             if(keyword !== "" && keyword !== undefined){
                 let rgx = new RegExp(keyword);
@@ -49,6 +50,7 @@ const rootReducer = (state = initState,action) => {
             }
             return ({
                 ...state,
+                keyword:keyword,
                 matchTodos : matches
             });
         case "DETAILS_UPDATE":

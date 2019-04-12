@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 const Todo = (props) => {
     const {handleDltTodos} = props;
     const {mode} = props;
+    const {keyword} = props;
     const todos = mode !== "search" ? props.todos : props.matchTodos;
     const handleDltFunc = (id) => {
         handleDltTodos(id);
@@ -18,8 +19,12 @@ const Todo = (props) => {
             </li>
         )
     });
-    if(mode === "search" && rtntodos.length === 0)
-        return (<p>No Content Found</p>);
+    if(mode === "search" && rtntodos.length === 0) {
+        if (keyword !== "" && keyword !== undefined)
+            return (<p>No Content Found</p>);
+        else
+            return null;
+    }
     return rtntodos.length !== 0 ?(
         <ul className="list-group" style={{overflowY:"scroll",maxHeight:"220px"}}>{rtntodos}</ul>
     ): (<p>Have a Happy Day!</p>);
@@ -28,7 +33,8 @@ const Todo = (props) => {
 const mapStateToProps = (state) => {
     return ({
         matchTodos : state.matchTodos,
-        todos : state.todos
+        todos : state.todos,
+        keyword: state.keyword
     });
 };
 const mapDispatchToProps = (dispatch) => {

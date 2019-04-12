@@ -22,3 +22,7 @@
 <p>6.Fix some bugs of search function, need change the html style</p>
 <p>7.Change Todo funtion component to container component(reduce the complex of redux)</p>
 <p>8.Add image input(prepare for server or database)</p>
+
+<h2>Version: 1.0.3</h2>
+<p>1.Fixed the todo list scroll display issues</p>
+<p>6.Fixed the display problem of search part</p>

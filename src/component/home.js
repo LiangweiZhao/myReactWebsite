@@ -3,6 +3,9 @@ import Todo from './todo';
 import AddTodo from './addTodo';
 import Search from './searchTodo';
 import plant from '../imgs/g0.jpg';
+import home1 from '../imgs/home1.jpeg';
+import listbg from '../imgs/listbg.jpeg';
+import home2 from '../imgs/home2.jpeg';
 
 class Home extends Component{
 
@@ -14,8 +17,12 @@ class Home extends Component{
                         <h1 style={{color:"lighten-1"}}>Things You Need to Do</h1>
                     </div>
                     <div className="card-body">
-                        <Todo/>
-                        <AddTodo/>
+                        <div className="bodyImg"><img src={home1} alt="homeLeft"/></div>
+                        <div className="bodyList" style={{backgroundImage:`url(${listbg})`,backgroundRepeat:"no-repeat",backgroundSize:"100%"}}>
+                            <Todo/>
+                            <AddTodo/>
+                        </div>
+                        <div className="bodyImg"><img src={home2} alt="homeRight"/></div>
                     </div>
                     <div className="card-footer text-muted">
                         Good Good Study, Day Day Up!
